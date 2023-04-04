@@ -1,0 +1,20 @@
+{
+  "name": "expressapirestcrud",
+  "version": "1.0.0",
+  "description": "API Rest Creada con ExpressJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/retrovertigo1981/expressApiRestCrud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/retrovertigo1981/expressApiRestCrud/issues"
+  },
+  "homepage": "https://github.com/retrovertigo1981/expressApiRestCrud#readme"
+}
