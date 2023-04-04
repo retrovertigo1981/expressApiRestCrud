@@ -4,7 +4,8 @@
   "description": "API Rest Creada con ExpressJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js"
+
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/retrovertigo1981/expressApiRestCrud/issues"
   },
-  "homepage": "https://github.com/retrovertigo1981/expressApiRestCrud#readme"
+  "homepage": "https://github.com/retrovertigo1981/expressApiRestCrud#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
