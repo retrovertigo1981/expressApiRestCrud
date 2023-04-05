@@ -3,7 +3,7 @@ const morgan = require('morgan')
 
 const app = express()
 const port = 3000
-const products = [
+let products = [
     {
         id: 1,
         name: "Macbook Pro",
@@ -26,13 +26,39 @@ app.post('/products', (req, res) => {
 })
 
 
-app.put('/products', (req, res) => {
+app.put('/products/:id', (req, res) => {
+    const productFound = products.find(
+        (p) => p.id === parseInt(req.params.id)
+    );
+
+    if (!productFound) return res.status(404).json({
+        message: "Product not Found"
+    });
+
+
+
+
     res.send('Actualizando Productos')
 })
 
 
-app.delete('/products', (req, res) => {
-    res.send('Eliminado Productos')
+app.delete('/products/:id', (req, res) => {
+
+    const productFound = products.find(
+        (p) => p.id === parseInt(req.params.id)
+    );
+
+    if (!productFound) return res.status(404).json({
+        message: "Product not Found"
+    });
+
+   products = products.filter(e => e.id !== parseInt(req.params.id))
+
+
+    console.log(products)
+    res.status(200).json({
+        message: "Producto Eliminado"
+    })
 })
 
 
