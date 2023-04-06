@@ -11,6 +11,8 @@ let products = [
     }
 ]
 
+
+
 app.use(morgan('dev'))
 app.use(express.json())
 
@@ -27,6 +29,7 @@ app.post('/products', (req, res) => {
 
 
 app.put('/products/:id', (req, res) => {
+    const newData = req.body
     const productFound = products.find(
         (p) => p.id === parseInt(req.params.id)
     );
@@ -35,10 +38,13 @@ app.put('/products/:id', (req, res) => {
         message: "Product not Found"
     });
 
+    console.log(newData)
 
+    products = products.map((p) => p.id === parseInt(req.params.id) ? {...p, ...newData} : p)
 
-
-    res.send('Actualizando Productos')
+    res.json({
+        message: "Producto Actualizado Exitosamente"
+    })
 })
 
 
